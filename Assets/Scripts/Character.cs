@@ -111,12 +111,19 @@ public class Character : Unit
     /// </summary>
     public override void ReceiveDamage()
     {
-        Lives--;
+        if (lives != 0)
+        {
+            Lives--;
 
-        rigidbody.velocity = Vector3.zero;
-        rigidbody.AddForce(transform.up * 8.0F, ForceMode2D.Impulse);
+            rigidbody.velocity = Vector3.zero;
+            rigidbody.AddForce(transform.up * 8.0F, ForceMode2D.Impulse);
 
-        Debug.Log(lives);
+            Debug.Log(lives);
+        }
+        else
+        {
+            gameOver();
+        }
     }
     /// <summary>
     /// Метод проверки нахождения персонажа на поверхности для возможности прыжка.
@@ -139,6 +146,14 @@ public class Character : Unit
             ReceiveDamage();
         }
     }
+    /// <summary>
+    /// Заготовка экрана Game Over
+    /// </summary>
+    public void gameOver()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+        print("Game Over!");
+    }
 		
 	}
 /// <summary>
@@ -150,4 +165,5 @@ public enum CharState
     runs,
     jump
 }
+
     

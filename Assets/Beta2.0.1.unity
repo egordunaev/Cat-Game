@@ -199,17 +199,17 @@ Prefab:
     - target: {fileID: 114352332822920722, guid: 7265cf2a9902ef2498528ee133067d96,
         type: 2}
       propertyPath: jumpForce
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114352332822920722, guid: 7265cf2a9902ef2498528ee133067d96,
         type: 2}
       propertyPath: lives
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114352332822920722, guid: 7265cf2a9902ef2498528ee133067d96,
         type: 2}
       propertyPath: speed
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7265cf2a9902ef2498528ee133067d96, type: 2}
