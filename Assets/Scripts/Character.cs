@@ -33,6 +33,8 @@ public class Character : Unit
 
     private Bullet bullet;
 
+    public int score;
+
 
     private CharState State
     {
@@ -135,7 +137,7 @@ public class Character : Unit
         if(!isGrounded) State = CharState.jump;
     }
     /// <summary>
-    /// Метод, описывающий возможность получения урона при столкновении коллайдеров (его компоненты определяют форму объекта для физических столкновений).
+    /// Метод, описывающий возможность получения урона при столкновении коллайдеров (его компоненты определяют форму объекта для физических столкновений),  а также поедания корма.
     /// </summary>
     /// <param name="collider"></param>
     private void OnTriggerEnter2D(Collider2D collider)
@@ -144,6 +146,11 @@ public class Character : Unit
         if(unit)
         {
             ReceiveDamage();
+        }
+
+        if (collider.gameObject.name == "Korm")
+        {
+            Destroy(collider.gameObject); score++;
         }
     }
     /// <summary>
@@ -154,8 +161,16 @@ public class Character : Unit
         Application.LoadLevel(Application.loadedLevel);
         print("Game Over!");
     }
-		
-	}
+
+    /// <summary>
+    /// Метод, описывающий вывод окна с отображением очков.
+    /// </summary>
+    public void OnGUI()
+    {
+        GUI.Box(new Rect(0, 50, 100, 100), "Очки :" + score);
+    }
+
+}
 /// <summary>
 /// Обозначение последовательности выполнения анимаций.
 /// </summary>
