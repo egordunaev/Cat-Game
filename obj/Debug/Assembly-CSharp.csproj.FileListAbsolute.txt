@@ -31,3 +31,7 @@ C:\Users\Александр\Documents\Beta2.0\obj\Debug\Assembly-CSharp.csproj.C
 C:\Users\Александр\Documents\Beta2.0\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\Александр\Documents\Beta2.0\obj\Debug\Assembly-CSharp.dll
 C:\Users\Александр\Documents\Beta2.0\obj\Debug\Assembly-CSharp.pdb
+E:\Programs\_program_stuff\UNITY\Projects\Beta2.0\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+E:\Programs\_program_stuff\UNITY\Projects\Beta2.0\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+E:\Programs\_program_stuff\UNITY\Projects\Beta2.0\obj\Debug\Assembly-CSharp.dll
+E:\Programs\_program_stuff\UNITY\Projects\Beta2.0\obj\Debug\Assembly-CSharp.pdb
