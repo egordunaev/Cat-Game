@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Класс, описывающий действия персонажа.
@@ -77,6 +78,10 @@ public class Character : Unit
         if (Input.GetButtonDown("Fire1")) Shoot();
         if (Input.GetButton("Horizontal")) Run();
         if (isGrounded && Input.GetButtonDown("Jump")) Jump();
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
 
     }
@@ -137,7 +142,7 @@ public class Character : Unit
         if(!isGrounded) State = CharState.jump;
     }
     /// <summary>
-    /// Метод, описывающий возможность получения урона при столкновении коллайдеров (его компоненты определяют форму объекта для физических столкновений),  а также поедания корма.
+    /// Метод, описывающий возможность получения урона при столкновении коллайдеров (его компоненты определяют форму объекта для физических столкновений),  а также поедания корма. Условие перехода между сценами.
     /// </summary>
     /// <param name="collider"></param>
     private void OnTriggerEnter2D(Collider2D collider)
@@ -152,7 +157,14 @@ public class Character : Unit
         {
             Destroy(collider.gameObject); score++;
         }
+        if (collider.gameObject.name == "endLevel")
+        {
+            SceneManager.LoadScene("Level2");
+
+
+        }
     }
+   
     /// <summary>
     /// Заготовка экрана Game Over
     /// </summary>
