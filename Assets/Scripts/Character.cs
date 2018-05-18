@@ -34,7 +34,8 @@ public class Character : Unit
 
     private Bullet bullet;
 
-    public int score;
+    public int score=0;
+    
 
 
     private CharState State
@@ -155,11 +156,12 @@ public class Character : Unit
 
         if (collider.gameObject.name == "Korm")
         {
-            Destroy(collider.gameObject); score++;
+            Destroy(collider.gameObject); score++; PlayerPrefs.SetInt("Score", score);
         }
         if (collider.gameObject.name == "endLevel")
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //SceneManager.LoadScene("Level2");
 
 
         }
@@ -170,6 +172,7 @@ public class Character : Unit
     /// </summary>
     public void gameOver()
     {
+        PlayerPrefs.SetInt("Score", 0);
         Application.LoadLevel(Application.loadedLevel);
         print("Game Over!");
     }
@@ -179,7 +182,16 @@ public class Character : Unit
     /// </summary>
     public void OnGUI()
     {
-        GUI.Box(new Rect(0, 50, 100, 100), "Очки :" + score);
+
+        //PlayerPrefs.SetInt("Score", score);
+        if (SceneManager.GetActiveScene().name=="FinalScore")
+        {
+            GUI.Label(new Rect(280, 95, 100, 100), PlayerPrefs.GetInt("Score").ToString());
+        }
+        else
+        {
+            GUI.Box(new Rect(0, 50, 100, 100), "Очки :" + PlayerPrefs.GetInt("Score").ToString());
+        }
     }
 
 }

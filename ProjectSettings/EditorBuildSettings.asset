@@ -14,3 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Level2.unity
     guid: a9fceefd60c4b2c47b3c51ce1dc2d067
+  - enabled: 1
+    path: Assets/FinalScore.unity
+    guid: 813c111198ac3ec47aff3e8c47bdc25e
+  m_configObjects: {}
